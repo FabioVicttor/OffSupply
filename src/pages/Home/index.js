@@ -29,7 +29,23 @@ export default function Home() {
           <Menu open={open} setOpen={setOpen} teste={teste}></Menu>
         </div>
       </div>
-      <div style={{ backgroundColor: "#7947B3", height: "450px" }}></div>
+      <div
+        style={{
+          backgroundColor: "#7947B3",
+          height: "450px",
+          padding: "40px",
+        }}
+      >
+        <div
+          style={{
+            marginTop: "95px",
+            textAlign: "center",
+            fontSize: "60px",
+          }}
+        >
+          OffSupply
+        </div>
+      </div>
 
       <div style={{ backgroundColor: "transparent", marginTop: "-120px" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>

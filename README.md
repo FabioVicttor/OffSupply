@@ -1,2 +1,2 @@
-# offsupply
-Marketplace website
+# OffSupply
+e-Commerce Website

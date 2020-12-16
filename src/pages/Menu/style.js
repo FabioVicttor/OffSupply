@@ -4,7 +4,7 @@ export const LeftMenu = styled.div`
   z-index: 9;
   overflow-x: auto;
   display: block;
-  width: 20%;
+  width: 380px;
   height: 100%;
   background-color: white;
   align-items: center;
@@ -15,7 +15,7 @@ export const LeftMenu = styled.div`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-75%)")};
 
   @media (max-width: 1024px) {
-    width: 80%;
+    width: 300px;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   }
 `;

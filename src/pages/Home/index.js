@@ -1,5 +1,14 @@
 import React, { useState, useRef } from "react";
-// import { Titulo } from "./style";
+import {
+  Header,
+  ContentHeader,
+  ContentHome,
+  ContentCard,
+  Card,
+  CardBusca,
+  InputBusca,
+  ButtonBusca,
+} from "./style";
 import Burger from "../Menu/Burger/Burger";
 import Menu from "../Menu/index";
 import { useOnClickOutside } from "./hooks";
@@ -29,52 +38,25 @@ export default function Home() {
           <Menu open={open} setOpen={setOpen} teste={teste}></Menu>
         </div>
       </div>
-      <div
-        style={{
-          backgroundColor: "#7947B3",
-          height: "450px",
-          padding: "40px",
-        }}
-      >
-        <div
-          style={{
-            marginTop: "95px",
-            textAlign: "center",
-            fontSize: "60px",
-          }}
-        >
-          OffSupply
-        </div>
-      </div>
+      <Header>
+        <ContentHeader>OffSupply</ContentHeader>
 
-      <div style={{ backgroundColor: "transparent", marginTop: "-120px" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div
-            style={{
-              width: "600px",
-              height: "500px",
-              // backgroundColor: "#c0c0c0",
-              backgroundColor: "white",
-              margin: "20px",
-              borderRadius: "30px",
-              boxShadow: "1px 1px 20px 0px black",
-            }}
-          ></div>
+          <CardBusca>
+            <InputBusca></InputBusca>
+            <ButtonBusca>BUSCAR</ButtonBusca>
+          </CardBusca>
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div
-            style={{
-              width: "600px",
-              height: "500px",
-              // backgroundColor: "#c0c0c0",
-              backgroundColor: "white",
-              margin: "20px",
-              borderRadius: "30px",
-              boxShadow: "1px 1px 20px 0px black",
-            }}
-          ></div>
-        </div>
-      </div>
+      </Header>
+
+      <ContentHome>
+        <ContentCard>
+          <Card></Card>
+        </ContentCard>
+        <ContentCard>
+          <Card></Card>
+        </ContentCard>
+      </ContentHome>
     </div>
   );
 }

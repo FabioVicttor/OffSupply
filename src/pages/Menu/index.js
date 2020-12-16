@@ -1,7 +1,7 @@
 import React from "react";
 import { LeftMenu, Titulo, ListaMenu, ItemMenu } from "./style";
-import IconShoppingCart from "../../assets/icons/shopping_cart";
-import IconShoppingBag from "../../assets/icons/shopping_bag";
+import IconCart from "../../assets/icons/IconCart";
+import IconUser from "../../assets/icons/IconUser";
 
 export default function Menu({ open, setOpen, teste }) {
   return (
@@ -11,11 +11,14 @@ export default function Menu({ open, setOpen, teste }) {
       </div>
       <ListaMenu>
         <ItemMenu>
-          <IconShoppingCart />
+          <IconUser />
+          <h2>Perfil</h2>
+        </ItemMenu>
+        <ItemMenu>
+          <IconCart />
           <h2>Teste</h2>
         </ItemMenu>
         <ItemMenu>
-          <IconShoppingBag />
           <h2>Teste</h2>
         </ItemMenu>
       </ListaMenu>

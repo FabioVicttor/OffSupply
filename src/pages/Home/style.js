@@ -26,13 +26,7 @@ export const Header = styled.div`
 `;
 
 export const ContentHeader = styled.div`
-  margin-top: 95px;
   text-align: center;
-  font-size: 60px;
-
-  @media (max-width: 720px) {
-    font-size: 40px;
-  }
 `;
 
 export const ContentHome = styled.div`
@@ -45,10 +39,8 @@ export const CardBusca = styled.div`
   width: 900px;
   height: 80px;
   background-color: white;
-  margin: 20px;
   border-radius: 30px;
   background-color: #10002b;
-
 `;
 
 export const InputBusca = styled.input`
@@ -77,6 +69,14 @@ export const ButtonBusca = styled.button`
   background-color: #10002b;
   color: white;
   transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+
+  span {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
 
   :hover {
     box-shadow: 5px 1px 10px 0px black;

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const LeftMenu = styled.div`
-  z-index: 9;
-  overflow-x: auto;
+  /* z-index: 9; */
+  overflow-x: hidden;
+  overflow-y: auto;
   display: block;
   width: 380px;
   height: 100%;
@@ -22,31 +23,40 @@ export const LeftMenu = styled.div`
 
 export const Titulo = styled.h1`
   margin-top: 5%;
-  color: ${({ teste }) => (teste ? "black" : "#7800FF")};
+  /* color: ${({ teste }) => (teste ? "black" : "#7800FF")}; */
   margin-top: 10%;
   margin-left: 80px;
 `;
 
-export const ListaMenu = styled.div`
-  /* padding: 15px; */
-`;
+export const ListaMenu = styled.div``;
 
 export const ItemMenu = styled.div`
+  z-index: 10;
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: 5px;
   justify-content: center;
   transition: transform 0.5s ease-in-out;
+  @media (min-width: 1024px) {
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(37%)")};
+  }
 
   :hover {
     box-shadow: 1px 1px 20px 0px black;
     color: white;
     background-color: #7800ff;
+    transition: transform 0.5s ease-in-out;
   }
 
   :active {
     box-shadow: 0px 0px 0px 0px black;
     transition: transform 0.5s ease-in-out;
+  }
+
+  h2 {
+    @media (min-width: 1024px) {
+      display: ${({ open }) => (open ? "block" : "none")};
+    }
   }
 `;

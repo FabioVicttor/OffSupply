@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./pages/Home/index";
-import "./index.css";
+import Index from "./pages/index";
+// import "./index.css";
+import "./style/index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Index />
   </React.StrictMode>,
   document.getElementById("root")
 );

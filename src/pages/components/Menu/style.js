@@ -47,6 +47,11 @@ export const ItemMenu = styled.div`
     color: white;
     background-color: #7800ff;
     transition: transform 0.5s ease-in-out;
+
+    svg {
+      height: 110px;
+      width: 110px;
+    }
   }
 
   :active {

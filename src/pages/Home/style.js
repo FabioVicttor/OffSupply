@@ -14,6 +14,11 @@ export const Card = styled.div`
   }
 `;
 
+export const ItemHome = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const ContentCard = styled.div`
   display: flex;
   justify-content: center;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Header,
   ContentHeader,
@@ -15,19 +15,32 @@ import IconBusca from "../../assets/icons/IconBusca";
 import LogoPreto from "../../assets/icons/LogoPreto";
 
 export default function Home() {
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+  }, []);
+  const [scrollposition, setScrollPosition] = useState(0);
+
+  const onScroll = () => {
+    const scrollY = window.scrollY; //Don't get confused by what's scrolling - It's not the window
+    setScrollPosition(scrollY);
+    // console.log(`onScroll, window.scrollY: ${scrollY}`)
+  };
   //OBJETO TESTE --- INICIO
   const Camisetas = [
     {
+      id: 1,
       tipo: "Camiseta",
       item: "Camiseta 1",
       preco: 10,
     },
     {
+      id: 2,
       tipo: "Camiseta",
       item: "Camiseta 2",
       preco: 10,
     },
     {
+      id: 3,
       tipo: "Camiseta",
       item: "Camiseta 3",
       preco: 10,
@@ -35,16 +48,19 @@ export default function Home() {
   ];
   const Calcas = [
     {
+      id: 1,
       tipo: "Calça",
       item: "Calça 1",
       preco: 10,
     },
     {
+      id: 2,
       tipo: "Calça",
       item: "Calça 2",
       preco: 10,
     },
     {
+      id: 3,
       tipo: "Calça",
       item: "Calça 3",
       preco: 10,
@@ -52,16 +68,19 @@ export default function Home() {
   ];
   const Calcados = [
     {
+      id: 1,
       tipo: "Tenis",
       item: "Tenis 1",
       preco: 10,
     },
     {
+      id: 2,
       tipo: "Tenis",
       item: "Tenis 2",
       preco: 10,
     },
     {
+      id: 3,
       tipo: "Tenis",
       item: "Tenis 3",
       preco: 10,
@@ -72,7 +91,7 @@ export default function Home() {
   return (
     <div>
       <Header>
-        <ContentHeader>
+        <ContentHeader scrollposition={scrollposition}>
           <LogoPreto />
         </ContentHeader>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -86,13 +105,13 @@ export default function Home() {
         </div>
       </Header>
 
-      <ContentHome>
+      <ContentHome scrollposition={scrollposition}>
         <ItemHome>
           <Card>
             <ContentCard>Classeficação: Camisetas</ContentCard>
             <ContentCard>
               {Camisetas.map((item) => (
-                <div>
+                <div key={item.id}>
                   <div>{item.item}</div>
                 </div>
               ))}
@@ -107,7 +126,7 @@ export default function Home() {
             <ContentCard>Classeficação: Calças</ContentCard>
             <ContentCard>
               {Calcas.map((item) => (
-                <div>
+                <div key={item.id}>
                   <div>{item.item}</div>
                 </div>
               ))}
@@ -122,7 +141,7 @@ export default function Home() {
             <ContentCard>Classeficação: Calçados</ContentCard>
             <ContentCard>
               {Calcados.map((item) => (
-                <div>
+                <div key={item.id}>
                   <div>{item.item}</div>
                 </div>
               ))}

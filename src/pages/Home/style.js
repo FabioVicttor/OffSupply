@@ -7,10 +7,10 @@ export const Card = styled.div`
   background-color: white;
   margin: 20px;
   border-radius: 30px;
-  box-shadow: 1px 1px 20px 0px black;
+  box-shadow: 0px 0px 15px 0px black;
 
   @media (min-width: 1024px) {
-    width: 800px;
+    width: 80%;
   }
 `;
 
@@ -27,16 +27,33 @@ export const ContentCard = styled.div`
 export const Header = styled.div`
   background-color: #7947b3;
   height: 450px;
-  padding: 40px;
+  /* padding: 40px; */
 `;
 
 export const ContentHeader = styled.div`
-  text-align: center;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${({ scrollposition }) =>
+    scrollposition >= 120 ? "100px" : "150px"};
+  width: 100%;
+  position: ${({ scrollposition }) =>
+    scrollposition >= 120 ? "fixed" : "auto"};
+  background-color: rgba(
+    121,
+    71,
+    179,
+    ${({ scrollposition }) => scrollposition / 100}
+  );
+  transition: 0.5s ease-in-out;
 `;
 
 export const ContentHome = styled.div`
   background-color: transparent;
-  margin-top: -120px;
+  margin-top: ${({ scrollposition }) =>
+    scrollposition >= 120 ? "0px" : "-120px"};
+  transition: 0.5s ease-in-out;
 `;
 
 export const CardBusca = styled.div`

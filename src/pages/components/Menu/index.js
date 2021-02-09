@@ -3,11 +3,11 @@ import { LeftMenu, Titulo, ListaMenu, ItemMenu } from "./style";
 import IconCart from "../../../assets/icons/IconCart";
 import IconUser from "../../../assets/icons/IconUser";
 
-export default function Menu({ open, setOpen, teste }) {
+export default function Menu({ open, setOpen }) {
   return (
     <LeftMenu open={open}>
       <div>
-        <Titulo teste={teste}>Off_Supply</Titulo>
+        <Titulo>Off_Supply</Titulo>
       </div>
       <ListaMenu open={open}>
         <ItemMenu open={open}>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LeftMenu = styled.div`
-  /* z-index: 9; */
+  z-index: 9;
   overflow-x: hidden;
   overflow-y: auto;
   display: block;
@@ -23,7 +23,6 @@ export const LeftMenu = styled.div`
 
 export const Titulo = styled.h1`
   margin-top: 5%;
-  /* color: ${({ teste }) => (teste ? "black" : "#7800FF")}; */
   margin-top: 10%;
   margin-left: 80px;
 `;
@@ -31,6 +30,7 @@ export const Titulo = styled.h1`
 export const ListaMenu = styled.div``;
 
 export const ItemMenu = styled.div`
+  height: 65px;
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -43,7 +43,7 @@ export const ItemMenu = styled.div`
   }
 
   :hover {
-    box-shadow: 1px 1px 20px 0px black;
+    box-shadow: 0px 0px 7px 0px black;
     color: white;
     background-color: #7800ff;
     transition: transform 0.5s ease-in-out;

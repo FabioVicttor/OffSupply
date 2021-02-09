@@ -24,7 +24,7 @@ export const StyledBurger = styled.button`
     height: 0.25rem;
     background: ${({ open }) => (open ? "black" : "#7800FF")};
     @media (max-width: 1024px) {
-      background: ${({ open }) => (open ? "black" : "white")};
+      background: ${({ open }) => (open ? "black" : "#10002b")};
     }
     border-radius: 10px;
     transition: all 0.3s linear;
@@ -42,6 +42,12 @@ export const StyledBurger = styled.button`
 
     :nth-child(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+    }
+  }
+
+  :hover {
+    div {
+      background: #10002b;
     }
   }
 `;

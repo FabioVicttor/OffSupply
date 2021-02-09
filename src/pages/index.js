@@ -11,21 +11,12 @@ export default function Index() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
-  const [teste, setTeste] = useState(false);
-
-  setInterval(() => {
-    setTeste(true);
-    setTimeout(() => {
-      setTeste(false);
-    }, 2500);
-  }, 1500);
-
   return (
     <div>
       <div>
         <div ref={node}>
           <Burger open={open} setOpen={setOpen}></Burger>
-          <Menu open={open} setOpen={setOpen} teste={teste}></Menu>
+          <Menu open={open} setOpen={setOpen}></Menu>
         </div>
         <Home />
         <Footer />

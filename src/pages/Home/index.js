@@ -9,21 +9,30 @@ import {
   CardBusca,
   InputBusca,
   ButtonBusca,
+  ContentHeaderIcon,
 } from "./style";
 
 import IconBusca from "../../assets/icons/IconBusca";
 import LogoPreto from "../../assets/icons/LogoPreto";
 
 export default function Home() {
+  const [largura, setLargura] = useState(window.innerWidth);
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+
+    const handleResize = () => setLargura(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
   const [scrollposition, setScrollPosition] = useState(0);
 
   const onScroll = () => {
     const scrollY = window.scrollY; //Don't get confused by what's scrolling - It's not the window
     setScrollPosition(scrollY);
-    // console.log(`onScroll, window.scrollY: ${scrollY}`)
   };
   //OBJETO TESTE --- INICIO
   const Camisetas = [
@@ -92,9 +101,16 @@ export default function Home() {
     <div>
       <Header>
         <ContentHeader scrollposition={scrollposition}>
-          <LogoPreto />
+          <ContentHeaderIcon scrollposition={scrollposition} largura={largura}>
+            <LogoPreto />
+          </ContentHeaderIcon>
         </ContentHeader>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <CardBusca>
             <InputBusca></InputBusca>
             <ButtonBusca>

@@ -7,8 +7,8 @@ export default function IconBusca() {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 803.52 439.73"
-      width="300px"
-      height="200px"
+      // width="300px"
+      // height="200px"
     >
       <title>OFFSupply</title>
       <path

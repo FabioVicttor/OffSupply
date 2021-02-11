@@ -35,28 +35,38 @@ export const ContentHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${({ scrollposition }) =>
-    scrollposition >= 120 ? "100px" : "150px"};
+  height: 100px;
   width: 100%;
-  position: ${({ scrollposition }) =>
-    scrollposition >= 120 ? "fixed" : "auto"};
+  position: fixed;
   background-color: rgba(
-    121,
-    71,
-    179,
-    ${({ scrollposition }) => scrollposition / 100}
+    255,
+    255,
+    255,
+    ${({ scrollposition }) => scrollposition / 200}
   );
-  transition: 0.5s ease-in-out;
+  box-shadow: ${({ scrollposition }) =>
+    scrollposition > 0 ? "0px 1px 5px 0px black" : "0px 0px 0px 0px black"};
+`;
+
+export const ContentHeaderIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  margin-top: ${({ largura, scrollposition }) =>
+    largura > 720 ? (scrollposition > 0 ? "0px" : "15px") : "0px"};
+  height: 100px;
+  width: ${({ scrollposition, largura }) =>
+    scrollposition > 0 ? "250px" : largura > 720 ? "450px" : "250px"};
 `;
 
 export const ContentHome = styled.div`
   background-color: transparent;
-  margin-top: ${({ scrollposition }) =>
-    scrollposition >= 120 ? "0px" : "-120px"};
-  transition: 0.5s ease-in-out;
+  margin-top: -120px;
 `;
 
 export const CardBusca = styled.div`
+  margin-top: 200px;
   display: flex;
   width: 900px;
   height: 80px;

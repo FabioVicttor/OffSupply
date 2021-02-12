@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Header,
-  ContentHeader,
   ContentHome,
   ContentCard,
   ItemHome,
@@ -9,23 +8,13 @@ import {
   CardBusca,
   InputBusca,
   ButtonBusca,
-  ContentHeaderIcon,
 } from "./style";
 
 import IconBusca from "../../assets/icons/IconBusca";
-import LogoPreto from "../../assets/icons/LogoPreto";
 
 export default function Home() {
-  const [largura, setLargura] = useState(window.innerWidth);
-
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
-
-    const handleResize = () => setLargura(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   const [scrollposition, setScrollPosition] = useState(0);
@@ -100,11 +89,6 @@ export default function Home() {
   return (
     <div>
       <Header>
-        <ContentHeader scrollposition={scrollposition}>
-          <ContentHeaderIcon scrollposition={scrollposition} largura={largura}>
-            <LogoPreto />
-          </ContentHeaderIcon>
-        </ContentHeader>
         <div
           style={{
             display: "flex",

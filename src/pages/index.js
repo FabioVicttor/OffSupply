@@ -3,6 +3,7 @@ import Burger from "./components/Menu/Burger/Burger";
 import Menu from "./components/Menu/index";
 import Home from "../pages/Home/index";
 import Footer from "../pages/components/Footer/footer";
+import Navbar from "./components/Navbar/index";
 import { useOnClickOutside } from "./hooks";
 
 export default function Index() {
@@ -15,6 +16,7 @@ export default function Index() {
     <div>
       <div>
         <div ref={node}>
+          <Navbar />
           <Burger open={open} setOpen={setOpen}></Burger>
           <Menu open={open} setOpen={setOpen}></Menu>
         </div>

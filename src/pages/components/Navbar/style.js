@@ -21,8 +21,6 @@ export const ContentNavbar = styled.div`
 export const ContentNavbarIcon = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  /* position: fixed; */
   margin-top: ${({ largura, scrollposition }) =>
     largura > 720 ? (scrollposition > 0 ? "0px" : "15px") : "0px"};
   height: 100px;
@@ -32,19 +30,14 @@ export const ContentNavbarIcon = styled.div`
 `;
 
 export const ItemNavbar = styled.div`
-  height: 100px;
-  /* z-index: 10; */
-
-  /* padding: 5px; */
-  /* justify-content: center;
-  transition: transform 0s ease-in-out; */
+  width: 110px;
 
   :hover {
     svg {
       cursor: pointer;
       height: 110px;
       width: 110px;
-      transition-duration: 500ms;
+      transition-duration: 300ms;
     }
   }
 
@@ -55,4 +48,11 @@ export const ItemNavbar = styled.div`
       width: 100px;
     }
   }
+`;
+
+export const ContentItemNavbar = styled.div`
+  display: flex;
+  position: absolute;
+  right: 20px;
+  height: 100px;
 `;

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { ContentNavbar, ContentNavbarIcon, ItemNavbar } from "./style";
+import {
+  ContentNavbar,
+  ContentNavbarIcon,
+  ItemNavbar,
+  ContentItemNavbar,
+} from "./style";
 
 import LogoPreto from "../../../assets/icons/LogoPreto";
 import IconCart from "../../../assets/icons/IconCart";
@@ -30,14 +35,18 @@ export default function Navbar() {
       <ContentNavbarIcon scrollposition={scrollposition} largura={largura}>
         <LogoPreto />
       </ContentNavbarIcon>
-      <div style={{ display: "flex", position: "absolute", right: "20px" }}>
-        <ItemNavbar>
-          <IconUser />
-        </ItemNavbar>
+      <ContentItemNavbar>
+        {largura > 720 ? (
+          <ItemNavbar>
+            <IconUser />
+          </ItemNavbar>
+        ) : (
+          <ItemNavbar></ItemNavbar>
+        )}
         <ItemNavbar>
           <IconCart />
         </ItemNavbar>
-      </div>
+      </ContentItemNavbar>
     </ContentNavbar>
   );
 }

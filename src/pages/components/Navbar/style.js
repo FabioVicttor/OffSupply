@@ -30,13 +30,16 @@ export const ContentNavbarIcon = styled.div`
 `;
 
 export const ItemNavbar = styled.div`
-  width: 110px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   :hover {
     svg {
       cursor: pointer;
       height: 110px;
-      width: 110px;
+      width: 75px;
       transition-duration: 300ms;
     }
   }
@@ -45,7 +48,7 @@ export const ItemNavbar = styled.div`
     svg {
       cursor: pointer;
       height: 100px;
-      width: 100px;
+      width: 65px;
     }
   }
 `;
@@ -53,6 +56,6 @@ export const ItemNavbar = styled.div`
 export const ContentItemNavbar = styled.div`
   display: flex;
   position: absolute;
-  right: 20px;
+  right: 0px;
   height: 100px;
 `;

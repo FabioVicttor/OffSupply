@@ -50,11 +50,17 @@ export const ItemMenu = styled.div`
 
     svg {
       height: 110px;
-      width: 110px;
+      width: 90px;
+      transition-duration: 300ms;
     }
   }
 
   :active {
+    svg {
+      cursor: pointer;
+      height: 100px;
+      width: 65px;
+    }
     box-shadow: 0px 0px 0px 0px black;
     transition: transform 0.5s ease-in-out;
   }

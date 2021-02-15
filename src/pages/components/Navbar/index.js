@@ -10,7 +10,7 @@ import LogoPreto from "../../../assets/icons/LogoPreto";
 import IconCart from "../../../assets/icons/IconCart";
 import IconUser from "../../../assets/icons/IconUser";
 
-export default function Navbar() {
+export default function Navbar({ show, setShow }) {
   const [largura, setLargura] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -30,6 +30,12 @@ export default function Navbar() {
     setScrollPosition(scrollY);
   };
 
+  // const [show, setShow] = useState(false);
+
+  // function showModal() {
+  //   setShow(true);
+  // }
+
   return (
     <ContentNavbar scrollposition={scrollposition}>
       <ContentNavbarIcon scrollposition={scrollposition} largura={largura}>
@@ -37,7 +43,12 @@ export default function Navbar() {
       </ContentNavbarIcon>
       <ContentItemNavbar>
         {largura > 720 ? (
-          <ItemNavbar>
+          <ItemNavbar
+            onClick={(e) => {
+              console.log(e);
+              setShow(true);
+            }}
+          >
             <IconUser />
           </ItemNavbar>
         ) : (

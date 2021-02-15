@@ -5,8 +5,8 @@ export default function IconUser() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 803.52 439.73"
-      height="100"
-      width="100"
+      height="75"
+      width="75"
     >
       <defs>
         <filter

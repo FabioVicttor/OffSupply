@@ -5,12 +5,15 @@ import {
   ItemNavbar,
   ContentItemNavbar,
 } from "./style";
+import { useDispatch } from "react-redux";
+import { setShow } from "../../../redux/actions";
 
 import LogoPreto from "../../../assets/icons/LogoPreto";
 import IconCart from "../../../assets/icons/IconCart";
 import IconUser from "../../../assets/icons/IconUser";
 
-export default function Navbar({ show, setShow }) {
+export default function Navbar() {
+  const dispatch = useDispatch();
   const [largura, setLargura] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -30,11 +33,9 @@ export default function Navbar({ show, setShow }) {
     setScrollPosition(scrollY);
   };
 
-  // const [show, setShow] = useState(false);
-
-  // function showModal() {
-  //   setShow(true);
-  // }
+  function showModalLogin() {
+    dispatch(setShow());
+  }
 
   return (
     <ContentNavbar scrollposition={scrollposition}>
@@ -43,12 +44,7 @@ export default function Navbar({ show, setShow }) {
       </ContentNavbarIcon>
       <ContentItemNavbar>
         {largura > 720 ? (
-          <ItemNavbar
-            onClick={(e) => {
-              console.log(e);
-              setShow(true);
-            }}
-          >
+          <ItemNavbar onClick={showModalLogin}>
             <IconUser />
           </ItemNavbar>
         ) : (

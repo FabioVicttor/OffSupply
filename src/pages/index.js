@@ -13,17 +13,15 @@ export default function Index() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
-  const [show, setShow] = useState(false);
-
   return (
     <div>
       <div>
         <div ref={node}>
-          <Navbar show={show} setShow={setShow} />
+          <Navbar />
           <Burger open={open} setOpen={setOpen}></Burger>
           <Menu open={open} setOpen={setOpen}></Menu>
         </div>
-        <ModalLogin show={show} setShow={setShow} />
+        <ModalLogin />
         <Home />
         <Footer />
       </div>

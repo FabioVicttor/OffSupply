@@ -1,24 +1,21 @@
 import React from "react";
 import { ModalState } from "../../../../redux/selectors";
 import { useSelector } from "react-redux";
+import { Content, Modal, ContentModal, ItemModal } from "./style";
 
 export default function ModalLogin() {
   const showModal = useSelector(ModalState);
   if (showModal) {
     return (
-      <div
-        style={{
-          width: "1000px",
-          height: "700px",
-          backgroundColor: "red",
-          position: "absolute",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2>ModalLogin</h2>
-      </div>
+      <Content>
+        <Modal>
+          <ContentModal>
+            <ItemModal>MODAL LOGIN/CADASTRO</ItemModal>
+            <ItemModal>MODAL LOGIN/CADASTRO</ItemModal>
+            <ItemModal>MODAL LOGIN/CADASTRO</ItemModal>
+          </ContentModal>
+        </Modal>
+      </Content>
     );
   }
   return null;

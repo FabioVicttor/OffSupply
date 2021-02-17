@@ -33,8 +33,19 @@ export default function Navbar() {
     setScrollPosition(scrollY);
   };
 
+  const [overflow, setOverflow] = React.useState("auto");
+  React.useEffect(() => {
+    document.body.style.overflow = overflow;
+  }, [overflow]);
+
   function showModalLogin() {
     dispatch(setShow());
+
+    if (overflow === "hidden") {
+      setOverflow("auto");
+    } else {
+      setOverflow("hidden");
+    }
   }
 
   return (

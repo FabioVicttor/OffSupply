@@ -5,6 +5,7 @@ import { Content, Modal, ContentModal, ItemModal } from "./style";
 
 export default function ModalLogin() {
   const showModal = useSelector(ModalState);
+
   if (showModal) {
     return (
       <Content>
@@ -17,6 +18,7 @@ export default function ModalLogin() {
         </Modal>
       </Content>
     );
+  } else {
+    return null;
   }
-  return null;
 }

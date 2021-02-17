@@ -17,7 +17,6 @@ export const Modal = styled.div`
   background-color: #7800ff;
   border-radius: 20px;
   margin-top: 50px;
-  transition-duration: 500ms;
 `;
 
 export const ContentModal = styled.div`

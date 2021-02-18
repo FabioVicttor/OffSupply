@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LeftMenu = styled.div`
-  z-index: 9;
+  z-index: 100;
   overflow-x: hidden;
   overflow-y: auto;
   display: block;

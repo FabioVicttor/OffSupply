@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
+  z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: #ffffff85;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* display: ${({ showModal }) => (showModal ? "flex" : "none")}; */
 `;
 
 export const Modal = styled.div`
@@ -23,9 +25,51 @@ export const ContentModal = styled.div`
   height: 100%;
   padding: 40px;
   color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
 
 export const ItemModal = styled.div`
   display: flex;
   justify-content: center;
+  margin: 50px;
+`;
+
+export const InputLogin = styled.input`
+  width: 295px;
+  height: 40px;
+  border-radius: 25px;
+  padding: 5px;
+  border: 0;
+  outline: none;
+  text-align: center;
+`;
+
+export const ButtonLogin = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: transform 0.5s ease-in-out;
+  color: black;
+
+  :hover {
+    box-shadow: 0px 0px 15px 0px #10002b;
+  }
+
+  :active {
+    box-shadow: 0px 0px 0px 0px #10002b;
+    transition: transform 0.5s ease-in-out;
+  }
+`;
+
+export const Item = styled.div`
+  margin: 10px;
+  :hover {
+    cursor: pointer;
+  }
 `;

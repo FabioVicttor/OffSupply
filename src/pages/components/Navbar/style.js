@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContentNavbar = styled.div`
-  z-index: 5;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;

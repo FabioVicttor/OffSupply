@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { ModalState } from "../../redux/selectors";
+import { useSelector } from "react-redux";
 import {
   Header,
   ContentHome,
@@ -13,6 +15,8 @@ import {
 import IconBusca from "../../assets/icons/IconBusca";
 
 export default function Home() {
+  const showModal = useSelector(ModalState);
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
   }, []);
@@ -87,7 +91,7 @@ export default function Home() {
   //OBJETO TESTE -- FINAL
 
   return (
-    <div>
+    <div style={{ filter: showModal ? "blur(3px)" : "none" }}>
       <Header>
         <div
           style={{

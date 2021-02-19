@@ -8,8 +8,29 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
 
-  /* display: ${({ showModal }) => (showModal ? "flex" : "none")}; */
+export const ContentX = styled.div`
+  position: fixed;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+  /* width: 2rem;
+  height: 2rem; */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  z-index: 101;
+`;
+
+export const X = styled.div`
+  width: 2rem;
+  border-radius: 10px;
+  position: relative;
 `;
 
 export const Modal = styled.div`

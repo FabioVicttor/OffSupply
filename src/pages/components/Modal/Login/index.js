@@ -9,68 +9,87 @@ import {
   InputLogin,
   ButtonLogin,
   Item,
+  ContentX,
+  X,
 } from "./style";
-// var { Transition } = require("react-transition-group"); // ES6
+import { Frame } from "framer";
 
 export default function ModalLogin() {
   const showModal = useSelector(ModalState);
-  // const [teste, setTeste] = React.useState(false);
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      transition: { duration: 0.5 },
+    },
+    visible: { opacity: 1 },
+  };
 
   if (showModal) {
-    // setTimeout(() => {
-    //   setTeste(true);
-    // }, 500);
     return (
-      <div
-
-      // id="ContentModalLogin"
-      // className={teste ? "enter-active" : "exit-active"}
-      >
+      <div>
         <Content>
-          <Modal>
-            <ContentModal>
-              <div>
-                <ItemModal>
-                  <InputLogin
-                    id="loginemail"
-                    type="text"
-                    placeholder="E-Mail"
-                  />
-                </ItemModal>
-                <ItemModal>
-                  <InputLogin
-                    id="senhalogin"
-                    type="password"
-                    placeholder="Senha"
-                  />
-                </ItemModal>
-                <ItemModal>
-                  <ButtonLogin>ENTRAR</ButtonLogin>
-                </ItemModal>
-                <ItemModal>
-                  <Item>Recuperar Senha</Item>
-                  <Item>Registrar-se</Item>
-                </ItemModal>
-              </div>
-            </ContentModal>
-          </Modal>
+          <Frame
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Modal>
+              <ContentX>
+                <X
+                  style={{
+                    border: "black",
+                    borderStyle: "solid",
+                    borderRadius: "10px",
+                    transform: "rotate(45deg)",
+                    
+                  }}
+                ></X>
+                <X
+                  style={{
+                    border: "black",
+                    borderStyle: "solid",
+                    borderRadius: "10px",
+                    transform: "rotate(-45deg)",
+                  }}
+                ></X>
+              </ContentX>
+              <ContentModal>
+                <div>
+                  <ItemModal>
+                    <InputLogin
+                      id="loginemail"
+                      type="text"
+                      placeholder="E-Mail"
+                    />
+                  </ItemModal>
+                  <ItemModal>
+                    <InputLogin
+                      id="senhalogin"
+                      type="password"
+                      placeholder="Senha"
+                    />
+                  </ItemModal>
+                  <ItemModal>
+                    <ButtonLogin>ENTRAR</ButtonLogin>
+                  </ItemModal>
+                  <ItemModal>
+                    <Item>Recuperar Senha</Item>
+                    <Item>Registrar-se</Item>
+                  </ItemModal>
+                </div>
+              </ContentModal>
+            </Modal>
+          </Frame>
         </Content>
       </div>
     );
   } else {
-    // setTimeout(() => {
-    //   setTeste(false);
-    // }, 1);
     return null;
   }
-
-  // return (
-  //   <Content showModal={showModal}>
-  //     <Modal>
-  //       <ContentModal>
-  //         {/* <ItemModal>MODAL LOGIN/CADASTRO</ItemModal> */}
-  //       </ContentModal>
-  //     </Modal>
-  //   </Content>
-  // );
 }
